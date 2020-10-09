@@ -56,9 +56,9 @@ int main() {
 				case 'A':
 					absence += 1;
 					note = -1;
-					notes[n] = note;
+					notes[i] = note;
 					i += 1;
-					n += 1;
+					
 					break;
 
 				case 'O':
@@ -97,8 +97,12 @@ int main() {
 		}
 		
 	}
-	float ecart = (1 / (n - 1)) * somme2;
+	
+	n = n - 1;
+	float diviseur = (float)1 / n;
+	float ecart = diviseur * somme2;
 	float ecart_type = sqrt(ecart);
+	
 
 	printf("\nNote max : %f\nNote min : %f\nMoyenne : %f\nL'ecart type est : %f \nIl y a %d absence(s)\n", note_max, note_min, moyenne, ecart_type,absence);
 	printf("\nLes notes sont: \n");
