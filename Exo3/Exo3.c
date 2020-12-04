@@ -107,9 +107,34 @@ int main() {
 	printf("\nNote max : %f\nNote min : %f\nMoyenne : %f\nL'ecart type est : %f \nIl y a %d absence(s)\n", note_max, note_min, moyenne, ecart_type,absence);
 	printf("\nLes notes sont: \n");
 	
-	for (j = 0; j < n; j++) {
-		printf("\nLa note no %d est : %f", j, notes[j]);
+	for (j = 0; j < n; j++) {						// question g 
+		printf("\nLa note no %d est : %f", j, notes[j]);		
 	}
+
+
+	// question h 
+
+	int temp[NBMAXNOTES];
+	int indices[NBMAXNOTES];
+
+	for (i = 0; i < NBMAXNOTES; i++) {
+		indices[i] = i;
+		temp[i] = notes[i];
+	}
+
+	for (int j = 0; j < NBMAXNOTES; j++) {
+		for (int k = 0; k < NBMAXNOTES; k++) {
+			if (temp[i] < temp[j]) {
+				int hold = temp[i];
+				temp[i] = temp[j];
+				temp[j] = hold;
+				hold = indices[i];
+				indices[i] = indices[j];
+				indices[j] = hold;
+			}
+		}
+	}
+
 }
 
 

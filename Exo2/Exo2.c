@@ -11,7 +11,7 @@ int main() {
 
 	while (entier>0) {
 
-		if (entier & 1 == 1) {
+		if ((entier & 1) == 1) {
 			printf("Bit %d :  ON\n", i);
 		}
 
